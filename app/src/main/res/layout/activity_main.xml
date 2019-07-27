@@ -14,6 +14,7 @@
         android:paddingLeft="16dp"
         android:paddingTop="8dp"
         android:text="Quantity"
+        android:textAllCaps="true"
         android:textSize="26sp"   />
 
     <TextView
