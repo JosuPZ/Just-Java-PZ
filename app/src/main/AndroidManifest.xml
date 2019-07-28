@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/coffee-logo"
+        android:icon="@drawable/coffee_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/coffee-logo"
+        android:roundIcon="@drawable/coffee_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
