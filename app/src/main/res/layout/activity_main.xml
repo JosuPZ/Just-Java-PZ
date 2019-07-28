@@ -28,7 +28,8 @@
             android:paddingTop="8dp"
             android:text="Quantity"
             android:textAllCaps="true"
-            android:textSize="26sp"   />
+            android:textSize="26sp"
+            android:textStyle="bold"    />
 
         <TextView
             android:id="@+id/quantity_text_view"
