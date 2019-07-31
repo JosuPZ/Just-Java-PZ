@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * This method increments the amount of coffees ordered.
      */
     public void increment(View view) {
-        int quantity = 2;
+        int quantity = 3;
         display(quantity);
         displayPrice(quantity * 5);
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
      * This method decrements the amount of coffees ordered.
      */
     public void decrement(View view) {
-        int quantity = 3;
+        int quantity = 1;
         display(quantity);
         displayPrice(quantity);
     }
