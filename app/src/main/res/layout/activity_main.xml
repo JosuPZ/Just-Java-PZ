@@ -32,6 +32,14 @@
             android:textStyle="bold"
             />
 
+        <Button
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="+"
+            />
+
         <TextView
             android:id="@+id/quantity_text_view"
             android:layout_width="wrap_content"
