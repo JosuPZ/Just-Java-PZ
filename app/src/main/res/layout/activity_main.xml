@@ -37,6 +37,7 @@
             android:layout_height="45dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:onClick="increment"
             android:text="+"
             />
 
@@ -56,7 +57,8 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="16dp"ç
+            android:onClick="decrement"
             android:text="-"
 
         <TextView
