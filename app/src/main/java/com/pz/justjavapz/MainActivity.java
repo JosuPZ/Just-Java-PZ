@@ -25,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
-        int price = 5;
+        /*int price = 5;
         display(quantity);
-        displayPrice(quantity* price);
+        displayPrice(quantity* price); */
+        String priceMessage = "Free";
+        displayMessage(priceMessage);
     }
 
     /**
@@ -60,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(Integer.toString(number) + "€");
+    }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 
 }
