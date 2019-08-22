@@ -74,4 +74,17 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(message);
     }
 
+    /**
+     * This method resets the quantity to zero and displays it.
+     */
+    public void reset(View view) {
+        quantity = 0;
+        int price = quantity*5;
+        displayQuantity(quantity);
+
+        String priceMessage = "Total: " + Integer.toString(price) + " €";
+        priceMessage += "\nThank you!";
+
+        displayMessage(priceMessage);
+    }
 }
