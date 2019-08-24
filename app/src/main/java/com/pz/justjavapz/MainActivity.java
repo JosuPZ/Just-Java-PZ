@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order based on the current quantity.
      *
+     * @param quantity number of coffees that are being ordered
+     *                 
      * @return the price
      */
     private int calculatePrice(int quantity) {
@@ -62,14 +64,18 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method displays the given quantity value on the screen.
+     *
+     * @param numberCoffees number of coffees that are being ordered
      */
-    private void displayQuantity(int number){
+    private void displayQuantity(int numberCoffees){
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText(Integer.toString(number));
+        quantityTextView.setText(Integer.toString(numberCoffees));
     }
 
     /**
      * This method displays the given price on the screen.
+     *
+     * @param number it's the price to be displayed
      */
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
@@ -78,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method displays the given text on the screen.
+     *
+     * @param message message to be displayed
      */
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
