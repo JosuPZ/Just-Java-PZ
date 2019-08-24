@@ -22,10 +22,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
+     */
+    private int calculatePrice(int quantity) {
+        int price = quantity * 5;
+        return price;
+    }
+
+    /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
-        int price = 5 * quantity;
+        int price = calculatePrice(quantity);
         String priceMessage = "Total: " + Integer.toString(price) + " €";
         priceMessage += "\nThank you!";
 
@@ -78,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
      * This method resets the quantity to zero and displays it.
      */
     public void reset(View view) {
-        quantity = 0;
-        int price = quantity*5;
+        int price = calculatePrice(quantity);
         displayQuantity(quantity);
 
         String priceMessage = "Total: " + Integer.toString(price) + " €";
