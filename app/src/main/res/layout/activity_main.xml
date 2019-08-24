@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/coffee_background"
+        android:src="@drawable/wood_texture"
         />
 
     <LinearLayout
@@ -28,6 +28,7 @@
             android:paddingTop="8dp"
             android:text="Quantity"
             android:textAllCaps="true"
+            android:textColor="#652E07"
             android:textSize="26sp"
             android:textStyle="bold"
             />
@@ -82,6 +83,7 @@
             android:paddingTop="16dp"
             android:text="Price"
             android:textAllCaps="true"
+            android:textColor="#652E07"
             android:textSize="26dp"
             android:textStyle="bold"
             />
@@ -95,7 +97,6 @@
             android:text="Total: 0 €\nThank you!"
             android:textColor="#000000"
             android:textSize="26sp"
-            android:textStyle="bold"
             />
 
         <Button
