@@ -25,13 +25,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order based on the current quantity.
      *
-     * @param quantity number of coffees that are being ordered.
-     * @param cupPrice price of each individual cup.
-     *                 
      * @return the price
      */
-    private int calculatePrice(int quantity, int cupPrice) {
-        int price = quantity * cupPrice;
+    private int calculatePrice() {
+        int price = quantity * CUP_PRICE;
         return price;
     }
 
@@ -39,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
-        int price = calculatePrice(quantity, CUP_PRICE);
-        String priceMessage = "Total: " + Integer.toString(price) + " €";
-        priceMessage += "\nThank you!";
-
+        int price = calculatePrice();
+        String priceMessage = "Total: " + Integer.toString(price) + " €\nThank you!";
         displayMessage(priceMessage);
     }
 
@@ -99,12 +94,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void reset(View view) {
         quantity = 0;
-        int price = calculatePrice(quantity, 0);
         displayQuantity(quantity);
 
-        String priceMessage = "Total: " + Integer.toString(price) + " €";
-        priceMessage += "\nThank you!";
-
+        int price = calculatePrice();
+        String priceMessage = "Total: " + Integer.toString(price) + " €\nThank you!";
         displayMessage(priceMessage);
     }
 }
