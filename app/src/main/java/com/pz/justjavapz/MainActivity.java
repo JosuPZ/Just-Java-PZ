@@ -14,6 +14,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     final int CUP_PRICE = 5;
+    String name = "Josu PZ";
     int quantity = 0;
 
     @Override
@@ -33,13 +34,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Creates a summary of the current order.
+     */
+    private String createOrderSummary(int price, String name) {
+        String summary = "";
+        summary += "Name: " + name;
+        summary += "\nQuantity: " + Integer.toString(quantity);
+        summary += "\nTotal: " + Integer.toString(price) + " €";
+        summary += "\nThank you!";
+        return summary;
+    }
+
+    /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
         int price = calculatePrice();
-        String priceMessage = "Total: " + Integer.toString(price) + " €\nThank you!";
+        String priceMessage = createOrderSummary(price, name);
         displayMessage(priceMessage);
-    }
+        }
 
     /**
      * This method increments the amount of coffees ordered.
@@ -97,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
 
         int price = calculatePrice();
-        String priceMessage = "Total: " + Integer.toString(price) + " €\nThank you!";
+        String priceMessage = createOrderSummary(0, "None");
         displayMessage(priceMessage);
     }
 }

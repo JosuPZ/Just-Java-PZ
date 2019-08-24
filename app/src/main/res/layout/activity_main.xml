@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
-            android:text="Total: 0 €\nThank you!"
+            android:text="Name: None\nQuantity: 0\nTotal: 0 €\nThank you!"
             android:textColor="#000000"
             android:textSize="26sp"
             android:textStyle="bold"
