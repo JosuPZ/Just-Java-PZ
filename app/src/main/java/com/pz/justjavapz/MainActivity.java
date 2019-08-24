@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
      * @return the price
      */
     private int calculatePrice() {
-        int price = quantity * CUP_PRICE;
-        return price;
+        return quantity * CUP_PRICE;
     }
 
     /**
@@ -50,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view){
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, name);
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(price, name));
         }
 
     /**
