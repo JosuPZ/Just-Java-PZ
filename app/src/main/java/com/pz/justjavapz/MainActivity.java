@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
      * @return the price
      */
     private int calculatePrice(int quantity, int cupPrice) {
-        int price = quantity * CUP_PRICE;
+        int price = quantity * cupPrice;
         return price;
     }
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
-        int price = calculatePrice(quantity, cupPrice);
+        int price = calculatePrice(quantity, CUP_PRICE);
         String priceMessage = "Total: " + Integer.toString(price) + " €";
         priceMessage += "\nThank you!";
 
@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
      * This method resets the quantity to zero and displays it.
      */
     public void reset(View view) {
-        int price = calculatePrice(quantity);
+        quantity = 0;
+        int price = calculatePrice(quantity, 0);
         displayQuantity(quantity);
 
         String priceMessage = "Total: " + Integer.toString(price) + " €";
