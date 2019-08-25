@@ -2,6 +2,7 @@ package com.pz.justjavapz;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
@@ -100,5 +101,8 @@ public class MainActivity extends AppCompatActivity {
         int price = calculatePrice();
         String priceMessage = createOrderSummary(0, "None");
         displayMessage(priceMessage);
+
+        CheckBox checkBox = findViewById(R.id.checkbox);
+        checkBox.setChecked(false);
     }
 }
