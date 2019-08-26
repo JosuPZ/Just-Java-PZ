@@ -68,10 +68,13 @@ public class MainActivity extends AppCompatActivity {
      * @param whippedCream boolean specifying if the coffee contains whipped cream or not.
      * @return text summary of the specified order.
      */
-    private String createOrderSummary(int price, String name, boolean whippedCream) {
+    private String createOrderSummary(int price, String name,
+                                      boolean whippedCream, boolean chocolate)
+    {
         String summary = "";
         summary += "Name: " + name;
         summary += "\nWhipped Cream: " + Boolean.toString(whippedCream);
+        summary += "\nChocolate: " + Boolean.toString(chocolate);
         summary += "\nQuantity: " + Integer.toString(quantity);
         summary += "\nTotal: " + Integer.toString(price) + " €";
         summary += "\nThank you!";
@@ -84,10 +87,13 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view){
         int price = calculatePrice();
 
-        CheckBox checkBox = findViewById(R.id.whipped_cream_checkbox);
-        boolean whippedCream = checkBox.isChecked();
+        CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
+        boolean whippedCream = whipped_cream_checkBox.isChecked();
 
-        displayMessage(createOrderSummary(price, name, whippedCream));
+        CheckBox chocolate_checkBox= findViewById(R.id.chocolate_checkbox);
+        boolean chocolate = chocolate_checkBox.isChecked();
+
+        displayMessage(createOrderSummary(price, name, whippedCream, chocolate));
         }
 
     /**
@@ -136,10 +142,15 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
 
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(0, "None", false);
+        String priceMessage = createOrderSummary(0, "None", false, false);
         displayMessage(priceMessage);
 
-        CheckBox checkBox = findViewById(R.id.checkbox);
-        checkBox.setChecked(false);
+        CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
+        whipped_cream_checkBox.setChecked(false);
+
+        CheckBox chocolate_checkBox = findViewById(R.id.chocolate_checkbox);
+        chocolate_checkBox.setChecked(false);
+
+
     }
 }
