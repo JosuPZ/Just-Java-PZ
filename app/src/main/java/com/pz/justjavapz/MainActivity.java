@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates a summary of the current order.
      */
-    private String createOrderSummary(int price, String name) {
+    private String createOrderSummary(int price, String name, boolean whippedCream) {
         String summary = "";
         summary += "Name: " + name;
+        summary += "\nWhipped Cream: " + Boolean.toString(whippedCream);
         summary += "\nQuantity: " + Integer.toString(quantity);
         summary += "\nTotal: " + Integer.toString(price) + " €";
         summary += "\nThank you!";
@@ -50,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view){
         int price = calculatePrice();
-        displayMessage(createOrderSummary(price, name));
+
+        CheckBox checkBox = findViewById(R.id.checkbox);
+        boolean whippedCream = checkBox.isChecked();
+
+        displayMessage(createOrderSummary(price, name, whippedCream));
         }
 
     /**
@@ -99,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
 
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(0, "None");
+        String priceMessage = createOrderSummary(0, "None", false);
         displayMessage(priceMessage);
 
         CheckBox checkBox = findViewById(R.id.checkbox);
