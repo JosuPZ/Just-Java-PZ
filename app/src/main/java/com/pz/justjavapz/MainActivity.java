@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Creates a summary of the current order.
+     *
+     * @param price the amount to pay for the coffees.
+     * @param name name of the person buying the coffees.
+     * @param whippedCream boolean specifying if the coffee contains whipped cream or not.
+     * @return text summary of the specified order.
      */
     private String createOrderSummary(int price, String name, boolean whippedCream) {
         String summary = "";
@@ -52,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view){
         int price = calculatePrice();
 
-        CheckBox checkBox = findViewById(R.id.checkbox);
+        CheckBox checkBox = findViewById(R.id.whipped_cream_checkbox);
         boolean whippedCream = checkBox.isChecked();
 
         displayMessage(createOrderSummary(price, name, whippedCream));
