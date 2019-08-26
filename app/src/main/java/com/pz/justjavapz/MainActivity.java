@@ -24,6 +24,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle out){
+        super.onSaveInstanceState(out);
+
+        out.putInt("quantity", quantity);
+
+        TextView quantityTextView = findViewById(R.id.quantity_text_view);
+        out.putString("quantity_textView", quantityTextView.getText().toString());
+
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        out.putString("orderSummary_TextView", orderSummaryTextView.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle in){
+        super.onRestoreInstanceState(in);
+
+        quantity = in.getInt("quantity");
+
+        TextView quantityTextView = findViewById(R.id.quantity_text_view);
+        quantityTextView.setText(in.getString("quantity_textView"));
+
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(in.getString("orderSummary_TextView"));
+
+    }
+
     /**
      * Calculates the price of the order based on the current quantity.
      *
