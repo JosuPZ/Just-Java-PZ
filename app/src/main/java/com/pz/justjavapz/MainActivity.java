@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 import java.text.NumberFormat;
@@ -15,7 +16,6 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     final int CUP_PRICE = 5;
-    String name = "Josu PZ";
     int quantity = 0;
 
     @Override
@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
         out.putString("orderSummary_TextView", orderSummaryTextView.getText().toString());
+
+        EditText editText = findViewById(R.id.edit_text);
+        out.putString("editText", editText.getText().toString());
     }
 
     @Override
@@ -48,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
         orderSummaryTextView.setText(in.getString("orderSummary_TextView"));
+
+        EditText editText = findViewById(R.id.edit_text);
+        editText.setText(in.getString("editText"));
 
     }
 
@@ -92,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
         CheckBox chocolate_checkBox= findViewById(R.id.chocolate_checkbox);
         boolean chocolate = chocolate_checkBox.isChecked();
+
+        EditText editText = findViewById(R.id.edit_text);
+        String name = editText.getText().toString();
 
         displayMessage(createOrderSummary(price, name, whippedCream, chocolate));
         }
@@ -141,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
         quantity = 0;
         displayQuantity(quantity);
 
-        int price = calculatePrice();
         String priceMessage = createOrderSummary(0, "None", false, false);
         displayMessage(priceMessage);
 
@@ -151,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate_checkBox = findViewById(R.id.chocolate_checkbox);
         chocolate_checkBox.setChecked(false);
 
-
+        EditText editText = findViewById(R.id.edit_text);
+        editText.setText("");
+        editText.setHint("Name");
     }
 }
