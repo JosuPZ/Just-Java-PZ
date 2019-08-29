@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:paddingTop="16dp"
-                android:text="Name: None\nWhipped cream: false\nChocolate: false\nQuantity: 0\nTotal: 0 €\nThank you!"
+                android:text="Name: None\nWhipped cream: NO\nChocolate: NO\nQuantity: 0\nTotal: 0 €\nThank you!"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold"

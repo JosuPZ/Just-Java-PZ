@@ -95,9 +95,23 @@ public class MainActivity extends AppCompatActivity {
                                       boolean whippedCream, boolean chocolate)
     {
         String summary = "";
+
         summary += "Name: " + name;
-        summary += "\nWhipped Cream: " + Boolean.toString(whippedCream);
-        summary += "\nChocolate: " + Boolean.toString(chocolate);
+
+        if (whippedCream == true) {
+            summary += "\nWhipped Cream: YES";
+        }
+        else {
+            summary += "\nWhipped Cream: NO";
+        }
+
+        if (chocolate == true) {
+            summary += "\nChocolate: YES";
+        }
+        else {
+            summary += "\nChocolate: NO";
+        }
+
         summary += "\nQuantity: " + Integer.toString(quantity);
         summary += "\nTotal: " + Integer.toString(price) + " €";
         summary += "\nThank you!";
