@@ -63,25 +63,23 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order based on the current quantity.
      *
+     * @param add_whipped_cream true if the order has whipped cream
+     * @param add_chocolate true if the order has chocolate
      * @return the price
      */
-    private int calculatePrice() {
+    private int calculatePrice(boolean add_whipped_cream, boolean add_chocolate) {
 
-        CheckBox whipped_cream_checkbox = findViewById(R.id.whipped_cream_checkbox);
-        int whipped_cream_extra = 0;
+        int unitPrice = CUP_PRICE;
 
-        CheckBox chocolate_checkbox = findViewById(R.id.chocolate_checkbox);
-        int chocolate_extra = 0;
-
-        if (whipped_cream_checkbox.isChecked() == true) {
-            whipped_cream_extra = WHIPPED_CREAM_PRICE;
+        if (add_whipped_cream) {
+            unitPrice += WHIPPED_CREAM_PRICE;
         }
 
-        if (chocolate_checkbox.isChecked() == true) {
-            chocolate_extra = CHOCOLATE_PRICE;
+        if (add_chocolate) {
+            unitPrice += CHOCOLATE_PRICE;
         }
 
-        return quantity * (CUP_PRICE + whipped_cream_extra + chocolate_extra);
+        return quantity * unitPrice;
     }
 
     /**
@@ -109,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view){
-        int price = calculatePrice();
 
         CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
         boolean whippedCream = whipped_cream_checkBox.isChecked();
@@ -122,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
         if (name.isEmpty()) {
             name = "None";
         }
+
+        int price = calculatePrice(whippedCream, chocolate);
 
         displayMessage(createOrderSummary(price, name, whippedCream, chocolate));
         }
