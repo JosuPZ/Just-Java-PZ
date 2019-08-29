@@ -148,8 +148,7 @@ public class MainActivity extends AppCompatActivity {
             quantity = quantity + 1;
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Quantity can't be greater than 99", Toast.LENGTH_LONG);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Quantity can't be greater than 99", Toast.LENGTH_LONG).show();
         }
         displayQuantity(quantity);
     }
@@ -162,8 +161,7 @@ public class MainActivity extends AppCompatActivity {
             quantity = quantity - 1;
         }
         else {
-            Toast toast = Toast.makeText(getApplicationContext(), "Quantity can't be smaller than 1", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(getApplicationContext(), "Quantity can't be smaller than 1", Toast.LENGTH_SHORT).show();
         }
         displayQuantity(quantity);
     }
