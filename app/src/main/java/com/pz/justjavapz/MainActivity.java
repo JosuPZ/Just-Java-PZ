@@ -1,6 +1,7 @@
 package com.pz.justjavapz;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     final int CUP_PRICE = 5;
+    final int WHIPPED_CREAM_PRICE = 1;
+    final int CHOCOLATE_PRICE = 2;
     int quantity = 0;
 
     @Override
@@ -63,7 +66,22 @@ public class MainActivity extends AppCompatActivity {
      * @return the price
      */
     private int calculatePrice() {
-        return quantity * CUP_PRICE;
+
+        CheckBox whipped_cream_checkbox = findViewById(R.id.whipped_cream_checkbox);
+        int whipped_cream_extra = 0;
+
+        CheckBox chocolate_checkbox = findViewById(R.id.chocolate_checkbox);
+        int chocolate_extra = 0;
+
+        if (whipped_cream_checkbox.isChecked() == true) {
+            whipped_cream_extra = WHIPPED_CREAM_PRICE;
+        }
+
+        if (chocolate_checkbox.isChecked() == true) {
+            chocolate_extra = CHOCOLATE_PRICE;
+        }
+
+        return quantity * (CUP_PRICE + whipped_cream_extra + chocolate_extra);
     }
 
     /**
@@ -101,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editText = findViewById(R.id.edit_text);
         String name = editText.getText().toString();
+        if (name.isEmpty()) {
+            name = "None";
+        }
 
         displayMessage(createOrderSummary(price, name, whippedCream, chocolate));
         }
