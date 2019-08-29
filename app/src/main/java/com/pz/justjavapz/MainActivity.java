@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Text;
 import java.text.NumberFormat;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     final int CUP_PRICE = 5;
     final int WHIPPED_CREAM_PRICE = 1;
     final int CHOCOLATE_PRICE = 2;
-    int quantity = 0;
+    int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +130,13 @@ public class MainActivity extends AppCompatActivity {
      * This method increments the amount of coffees ordered.
      */
     public void increment(View view) {
-        quantity = quantity + 1;
+        if (quantity < 99) {
+            quantity = quantity + 1;
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Quantity can't be greater than 99", Toast.LENGTH_LONG);
+            toast.show();
+        }
         displayQuantity(quantity);
     }
 
@@ -137,8 +144,12 @@ public class MainActivity extends AppCompatActivity {
      * This method decrements the amount of coffees ordered.
      */
     public void decrement(View view) {
-        if (quantity > 0) {
+        if (quantity > 1) {
             quantity = quantity - 1;
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Quantity can't be smaller than 1", Toast.LENGTH_SHORT);
+            toast.show();
         }
         displayQuantity(quantity);
     }
