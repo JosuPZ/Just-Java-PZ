@@ -3,9 +3,26 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#C26E1B</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Main color of the app. -->
+        <item name="colorPrimary">#FFCCBC</item>
+        <!-- Color of the action bar. -->
+        <item name="colorPrimaryDark">#E64A19</item>
+        <!-- Color of buttons and stuff. -->
+        <item name="colorAccent">#795548</item>
+        <!-- Color of the background and stuff. -->
+        <item name="android:background">#FFCCBC</item>
+
     </style>
 
+    <!-- Headers style. -->
+    <style name="Header" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#652E07</item>
+        <item name="android:textSize">26dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
