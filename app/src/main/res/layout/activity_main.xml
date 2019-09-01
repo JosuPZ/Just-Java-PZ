@@ -26,15 +26,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
+                style="@style/Header"
                 android:text="@string/name"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26sp"
-                android:textStyle="bold"
                 />
 
             <EditText
@@ -51,15 +44,8 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
+                style="@style/Header"
                 android:text="@string/toppings"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26sp"
-                android:textStyle="bold"
                 />
 
             <LinearLayout
@@ -100,15 +86,8 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp"
+                style="@style/Header"
                 android:text="@string/quantity"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26sp"
-                android:textStyle="bold"
                 />
 
             <LinearLayout
@@ -147,15 +126,8 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                style="@style/Header"
                 android:text="@string/order_summary"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26dp"
-                android:textStyle="bold"
                 />
 
             <TextView
