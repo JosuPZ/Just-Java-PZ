@@ -1,3 +1,68 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java PZ</string>
+
+    <!-- Header text for the edit text of name -->
+    <string name="name">Name</string>
+
+    <!-- Default name of the user -->
+    <string name="default_name">None</string>
+
+    <!-- Header text for the toppings -->
+    <string name="toppings">Toppings</string>
+
+    <!-- Text for the whipped cream topping -->
+    <string name="whipped_cream">Whipped Cream</string>
+
+    <!-- Text for the chocolate topping -->
+    <string name="chocolate">Chocolate</string>
+
+    <!-- Header text for the quantity -->
+    <string name="quantity">Quantity</string>
+
+    <!-- Header text for the order summary -->
+    <string name="order_summary">Order Summary</string>
+
+    <!-- Header text for the preview -->
+    <string name="preview">Preview</string>
+
+    <!-- Header text for the order -->
+    <string name="order">Order</string>
+
+    <!-- Header text for the reset -->
+    <string name="reset">Reset</string>
+
+    <!-- Text to specify the total cost of the order -->
+    <string name="total">Total</string>
+
+    <!-- Text to thank the user -->
+    <string name="ty">Thank you!</string>
+
+    <!-- Default text of the order summary, it follows this structure:
+    Name: None\n
+    Whipped cream: NO\n
+    Chocolate: NO\n
+    Quantity: 0\n
+    Total: 0 €\n
+    Thank you! -->
+    <string name="default_order_summary">Name: None Whipped cream: No Chocolate: No Quantity: 0 Total: 0 € Thank you!</string>
+
+    <!-- Text to warn the user he has ordered to much coffee-->
+    <string name="too_much_coffee">Quantity can\'t be greater than 99</string>
+
+    <!-- Text to warn the user he has ordered very little coffee-->
+    <string name="very_little_coffee">Quantity can\'t be smaller than 1</string>
+
+    <!-- Default email address -->
+    <string name="e_adress">coffee.pz@gmail.com</string>
+
+    <!-- Default email subject -->
+
+    <!-- Negation -->
+    <string name="no">No</string>
+
+    <!-- Affirmation -->
+    <string name="yes">Yes</string>
+    <string name="e_subject">Coffee Order for: <xliff:g id="name" example="Josu">%s</xliff:g></string>
+
+
 </resources>

@@ -1,17 +1,15 @@
 package com.pz.justjavapz;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import org.w3c.dom.Text;
-import java.text.NumberFormat;
 
 
 /**
@@ -117,25 +115,25 @@ public class MainActivity extends AppCompatActivity {
     {
         String summary = "";
 
-        summary += "Name: " + name;
+        summary += getString(R.string.name) + ": " + name;
 
-        if (whippedCream == true) {
-            summary += "\nWhipped Cream: YES";
+        if (whippedCream) {
+            summary += "\n" + getString(R.string.whipped_cream) + ": " + getString(R.string.yes);
         }
         else {
-            summary += "\nWhipped Cream: NO";
+            summary += "\n" + getString(R.string.whipped_cream) + ": " + getString(R.string.no);
         }
 
-        if (chocolate == true) {
-            summary += "\nChocolate: YES";
+        if (chocolate) {
+            summary += "\n" + getString(R.string.chocolate) + ": " + getString(R.string.yes);
         }
         else {
-            summary += "\nChocolate: NO";
+            summary += "\n" + getString(R.string.chocolate) + ": " + getString(R.string.no);
         }
 
-        summary += "\nQuantity: " + Integer.toString(quantity);
-        summary += "\nTotal: " + Integer.toString(price) + " €";
-        summary += "\nThank you!";
+        summary += "\n" + getString(R.string.quantity) + ": " + Integer.toString(quantity);
+        summary += "\n" + getString(R.string.total) + ": " + Integer.toString(price) + " €";
+        summary += "\n" + getString(R.string.ty);
         return summary;
     }
 
@@ -153,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.edit_text);
         String name = editText.getText().toString();
         if (name.isEmpty()) {
-            name = "None";
+            name = getString(R.string.default_name);
         }
 
         int price = calculatePrice(whippedCream, chocolate);
@@ -162,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayMessage(summary);
 
-        sendEmail(new String[]{"coffee.pz@gmail.com"}, "Coffee Order for " + name,  summary);
+        sendEmail(new String[]{getString(R.string.e_adress)}, getString(R.string.e_subject, name),  summary);
     }
 
     /**
@@ -179,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.edit_text);
         String name = editText.getText().toString();
         if (name.isEmpty()) {
-            name = "None";
+            name = getString(R.string.default_name);
         }
 
         int price = calculatePrice(whippedCream, chocolate);
@@ -197,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
             quantity = quantity + 1;
         }
         else {
-            Toast.makeText(getApplicationContext(), "Quantity can't be greater than 99", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.too_much_coffee), Toast.LENGTH_LONG).show();
         }
         displayQuantity(quantity);
     }
@@ -210,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
             quantity = quantity - 1;
         }
         else {
-            Toast.makeText(getApplicationContext(), "Quantity can't be smaller than 1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.very_little_coffee), Toast.LENGTH_SHORT).show();
         }
         displayQuantity(quantity);
     }
@@ -242,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
         quantity = 0;
         displayQuantity(quantity);
 
-        String priceMessage = createOrderSummary(0, "None", false, false);
+        String priceMessage = createOrderSummary(0, getString(R.string.default_name), false, false);
         displayMessage(priceMessage);
 
         CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
@@ -253,6 +251,6 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editText = findViewById(R.id.edit_text);
         editText.setText("");
-        editText.setHint("Name");
+        editText.setHint(getString(R.string.name));
     }
 }

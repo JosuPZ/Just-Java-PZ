@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Just Java PZ</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="default_name">Ninguno</string>
+    <string name="default_order_summary">Nombre: Ninguno\nCrema batida: No\nChocolate: No\nCantidad: 0\nTotal: 0 €\n¡Gracias!</string>
+    <string name="e_adress">coffee.pz@gmail.com</string>
+    <string name="e_subject">Pedido de Café para: <xliff:g id="name" example="Josu">%s</xliff:g></string>
+    <string name="name">Nombre</string>
+    <string name="no">No</string>
+    <string name="order">Pedido</string>
+    <string name="order_summary">Resumen del Pedido</string>
+    <string name="preview">Previsualización</string>
+    <string name="quantity">Cantidad</string>
+    <string name="reset">Reestablecer</string>
+    <string name="too_much_coffee">La cantidad no puede ser superior a 99</string>
+    <string name="toppings">Añadidos</string>
+    <string name="total">Total</string>
+    <string name="ty">¡Gracias!</string>
+    <string name="very_little_coffee">La cantidad no puede ser inferior a 1</string>
+    <string name="whipped_cream">Crema batida</string>
+    <string name="yes">Sí</string>
+</resources>
