@@ -171,15 +171,8 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                style="@style/Header"
                 android:text="@string/preview"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26dp"
-                android:textStyle="bold"
                 />
 
             <Button
@@ -194,15 +187,8 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                style="@style/Header"
                 android:text="@string/order"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26dp"
-                android:textStyle="bold"
                 />
 
             <Button
@@ -217,15 +203,8 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                style="@style/Header"
                 android:text="@string/reset"
-                android:textAllCaps="true"
-                android:textColor="#652E07"
-                android:textSize="26dp"
-                android:textStyle="bold"
                 />
 
             <Button
