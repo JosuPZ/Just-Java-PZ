@@ -44,7 +44,7 @@
     Quantity: 0\n
     Total: 0 €\n
     Thank you! -->
-    <string name="default_order_summary">Name: None Whipped cream: No Chocolate: No Quantity: 0 Total: 0 € Thank you!</string>
+    <string name="default_order_summary">Name: None Whipped cream: No Chocolate: No Quantity: 0 Total: 5 € Thank you!</string>
 
     <!-- Text to warn the user he has ordered to much coffee-->
     <string name="too_much_coffee">Quantity can\'t be greater than 99</string>

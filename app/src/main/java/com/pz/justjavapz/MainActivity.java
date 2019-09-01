@@ -240,10 +240,10 @@ public class MainActivity extends AppCompatActivity {
      * This method resets the quantity to zero and displays it.
      */
     public void reset(View view) {
-        quantity = 0;
+        quantity = 1;
         displayQuantity(quantity);
 
-        String priceMessage = createOrderSummary(0, getString(R.string.default_name), false, false);
+        String priceMessage = createOrderSummary(5, getString(R.string.default_name), false, false);
         displayMessage(priceMessage);
 
         CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
