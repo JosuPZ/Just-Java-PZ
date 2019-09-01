@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:paddingTop="16dp"
-                android:text="Order summary"
+                android:text="Order Summary"
                 android:textAllCaps="true"
                 android:textColor="#652E07"
                 android:textSize="26dp"
@@ -168,6 +168,29 @@
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:text="Preview"
+                android:textAllCaps="true"
+                android:textColor="#652E07"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="preview"
+                android:text="Preview"
+                android:textAlignment="center"
+                android:textSize="16sp"
                 />
 
             <TextView

@@ -1,5 +1,7 @@
 package com.pz.justjavapz;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -84,6 +86,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Sends email with current order
+     *
+     * @param adresses adresses that will receive the email
+     * @param subject subject of the email
+     * @param summary is the body of the email
+     */
+    private void sendEmail(String [] adresses, String subject, String summary) {
+        Intent email = new Intent(Intent.ACTION_SENDTO);
+        email.setData(Uri.parse("mailto:coffee.pz@gmail.com"));
+        email.putExtra(Intent.EXTRA_EMAIL, adresses);
+        email.putExtra(Intent.EXTRA_SUBJECT, subject);
+        email.putExtra(Intent.EXTRA_TEXT, summary);
+
+        if (email.resolveActivity(getPackageManager()) != null) {
+            startActivity(email);
+        }
+    }
+
+    /**
      * Creates a summary of the current order.
      *
      * @param price the amount to pay for the coffees.
@@ -137,8 +158,36 @@ public class MainActivity extends AppCompatActivity {
 
         int price = calculatePrice(whippedCream, chocolate);
 
-        displayMessage(createOrderSummary(price, name, whippedCream, chocolate));
+        String summary = createOrderSummary(price, name, whippedCream, chocolate);
+
+        displayMessage(summary);
+
+        sendEmail(new String[]{"coffee.pz@gmail.com"}, "Coffee Order for " + name,  summary);
+    }
+
+    /**
+     * This method is called when the preview button is clicked.
+     */
+    public void preview(View view){
+
+        CheckBox whipped_cream_checkBox = findViewById(R.id.whipped_cream_checkbox);
+        boolean whippedCream = whipped_cream_checkBox.isChecked();
+
+        CheckBox chocolate_checkBox= findViewById(R.id.chocolate_checkbox);
+        boolean chocolate = chocolate_checkBox.isChecked();
+
+        EditText editText = findViewById(R.id.edit_text);
+        String name = editText.getText().toString();
+        if (name.isEmpty()) {
+            name = "None";
         }
+
+        int price = calculatePrice(whippedCream, chocolate);
+
+        String summary = createOrderSummary(price, name, whippedCream, chocolate);
+
+        displayMessage(summary);
+    }
 
     /**
      * This method increments the amount of coffees ordered.
